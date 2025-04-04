@@ -1,0 +1,52 @@
+﻿@model SampleGoogleLogin.Controllers.UserProfile
+
+
+<h2>Profile Information</h2>
+
+<h3>Names</h3>
+<ul>
+    @foreach (var name in Model.Names)
+    {
+        <li>@name.DisplayName (@name.GivenName @name.FamilyName)</li>
+    }
+</ul>
+
+<h3>Emails</h3>
+<ul>
+    @foreach (var email in Model.EmailAddresses)
+    {
+        <li>@email.Value</li>
+    }
+</ul>
+
+<h3>Photos</h3>
+<ul>
+    @foreach (var photo in Model.Photos)
+    {
+        <li><img src="@photo.Url" alt="Profile Photo" /></li>
+    }
+</ul>
+
+<h3>Phone Numbers</h3>
+<ul>
+    @foreach (var phone in Model.PhoneNumbers)
+    {
+        <li>@phone.Value</li>
+    }
+</ul>
+
+<h3>Addresses</h3>
+<ul>
+    @foreach (var address in Model.Addresses)
+    {
+        <li>@address.FormattedValue</li>
+    }
+</ul>
+
+<h3>Birthdays</h3>
+<ul>
+    @foreach (var birthday in Model.Birthdays)
+    {
+        <li>@birthday.Date.Year/@birthday.Date.Month/@birthday.Date.Day</li>
+    }
+</ul>
